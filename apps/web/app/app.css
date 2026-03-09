@@ -63,34 +63,29 @@ code {
 .site-shell {
   margin: 0 auto;
   max-width: 1280px;
-  padding: 24px 24px 64px;
+  padding: 18px 24px 64px;
 }
 
 .site-header {
-  align-items: start;
-  backdrop-filter: blur(14px);
-  background: rgba(251, 248, 241, 0.76);
+  align-items: center;
+  background: rgba(251, 248, 241, 0.94);
   border: 1px solid rgba(20, 22, 25, 0.1);
-  border-radius: 34px;
-  box-shadow: var(--shadow-soft);
+  border-radius: 24px;
   display: grid;
-  gap: 20px 24px;
-  grid-template-areas:
-    "brand status"
-    "nav nav";
-  grid-template-columns: minmax(0, 1fr) auto;
-  margin-bottom: 28px;
-  padding: 24px 26px 20px;
-  position: sticky;
-  top: 16px;
-  z-index: 20;
+  gap: 16px 20px;
+  grid-template-areas: "brand nav status";
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  margin-bottom: 22px;
+  padding: 14px 18px;
 }
 
 .brand-block {
-  display: grid;
-  gap: 10px;
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
   grid-area: brand;
-  max-width: 52ch;
+  max-width: none;
 }
 
 .eyebrow {
@@ -104,25 +99,17 @@ code {
 
 .brand-mark {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 4.6vw, 4.8rem);
+  font-size: clamp(2rem, 3vw, 2.9rem);
   letter-spacing: -0.05em;
-  line-height: 0.85;
-}
-
-.brand-note {
-  color: var(--color-ink-soft);
-  font-size: 0.96rem;
-  line-height: 1.65;
-  margin: 0;
+  line-height: 0.9;
 }
 
 .site-nav {
-  border-top: 1px solid rgba(20, 22, 25, 0.1);
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   grid-area: nav;
-  padding-top: 16px;
+  justify-content: center;
 }
 
 .nav-link {
@@ -156,19 +143,20 @@ code {
 }
 
 .status-panel {
-  background: linear-gradient(180deg, rgba(19, 35, 44, 0.98), rgba(19, 35, 44, 0.9));
-  border-radius: 24px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  color: var(--color-paper-strong);
-  display: grid;
-  gap: 6px;
+  align-items: end;
+  background: rgba(20, 22, 25, 0.04);
+  border-radius: 18px;
+  color: var(--color-night);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   grid-area: status;
-  min-width: 220px;
-  padding: 14px 16px;
+  min-width: 168px;
+  padding: 10px 12px;
 }
 
 .status-label {
-  color: rgba(255, 253, 248, 0.66);
+  color: var(--color-ink-soft);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -788,11 +776,12 @@ code {
   .site-header {
     grid-template-areas:
       "brand"
-      "status"
-      "nav";
+      "nav"
+      "status";
   }
 
   .status-panel {
+    align-items: start;
     min-width: 0;
   }
 
@@ -820,6 +809,12 @@ code {
   .metric-card {
     border-radius: 26px;
     padding: 20px;
+  }
+
+  .brand-block {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .hero-title {

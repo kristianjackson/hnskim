@@ -90,9 +90,6 @@ export default function App({ loaderData }: Route.ComponentProps) {
             <NavLink className="brand-mark" to="/">
               {loaderData.publicEnv.appName}
             </NavLink>
-            <p className="brand-note">
-              Summary-first Hacker News triage for people who want the signal before the tab.
-            </p>
           </div>
           <div className="status-panel">
             <span className="status-label">Session</span>
