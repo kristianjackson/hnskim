@@ -58,7 +58,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 export default function HomeRoute({ loaderData }: Route.ComponentProps) {
   if (!loaderData.isConfigured) {
     return (
-      <main className="page">
+      <main className="page page-feed">
         <SetupPanel
           title="Configure Supabase before the feed can hydrate."
           copy="The feed reads from the database-backed ingestion pipeline. Add the Supabase bindings and apply the initial migration before expecting live Hacker News cards here."
@@ -68,7 +68,7 @@ export default function HomeRoute({ loaderData }: Route.ComponentProps) {
   }
 
   return (
-    <main className="page">
+    <main className="page page-feed">
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Top stories</p>

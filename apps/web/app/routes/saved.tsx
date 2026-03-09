@@ -51,7 +51,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 export default function SavedRoute({ loaderData }: Route.ComponentProps) {
   if (!loaderData.isConfigured) {
     return (
-      <main className="page">
+      <main className="page page-feed">
         <SetupPanel
           title="Saved stories depend on Supabase auth and storage."
           copy="Apply the initial migration and configure the public and service-role Supabase bindings before using per-user story state."
@@ -61,7 +61,7 @@ export default function SavedRoute({ loaderData }: Route.ComponentProps) {
   }
 
   return (
-    <main className="page">
+    <main className="page page-feed">
       <section className="section-header">
         <div>
           <p className="eyebrow">Saved stories</p>
