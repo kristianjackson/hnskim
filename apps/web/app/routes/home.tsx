@@ -74,25 +74,26 @@ export default function HomeRoute({ loaderData }: Route.ComponentProps) {
           <p className="eyebrow">Top stories</p>
           <h1 className="hero-title">
             {loaderData.viewer
-              ? "Your skim feed is live."
-              : "A faster way to scan Hacker News."}
+              ? "Read the signal before the click."
+              : "Skim the front page without opening twenty tabs."}
           </h1>
           <p className="hero-text">
-            HNSkim stores the Hacker News record, article fetch, extraction, and summary
-            separately so the cards stay honest about what is ready, what failed, and what still
-            needs background work.
+            HNSkim pulls top Hacker News stories, follows the linked article, extracts the readable
+            text, and shows a compact grounded summary next to the metadata that actually matters
+            when deciding whether to open the link.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/diagnostics">
-              Run pipeline diagnostics
+              Run the pipeline
             </Link>
             <Link className="button button-secondary" to="/saved">
-              Open saved stories
+              Open saved queue
             </Link>
           </div>
         </div>
         <aside className="hero-aside">
-          <p className="eyebrow">What the badges mean</p>
+          <p className="eyebrow">Field guide</p>
+          <h2 className="aside-title">Every card tells you whether the system trusts itself.</h2>
           <ul className="feature-list">
             <li>
               <code>summary_pending</code> means the article is still moving through fetch,
@@ -110,12 +111,12 @@ export default function HomeRoute({ loaderData }: Route.ComponentProps) {
       <section className="section-header">
         <div>
           <p className="eyebrow">Live feed</p>
-          <h2 className="section-title">Use the cards to decide what deserves a click.</h2>
+          <h2 className="section-title">Open fewer links. Miss less.</h2>
         </div>
         <p className="section-copy">
           {loaderData.viewer
             ? "Save the few stories worth revisiting and dismiss the rest."
-            : "Guest mode still shows the pipeline state, but save and dismiss will send you through auth."}
+            : "Guest mode still shows the feed and pipeline state. Save and dismiss will route through auth."}
         </p>
       </section>
 

@@ -25,7 +25,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,700&family=Sora:wght@400;500;600;700;800&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap",
   },
 ];
 
@@ -85,11 +85,18 @@ export default function App({ loaderData }: Route.ComponentProps) {
       />
       <div className="site-shell">
         <header className="site-header">
-          <div>
-            <p className="eyebrow">Hacker News triage</p>
+          <div className="brand-block">
+            <p className="eyebrow">Personal news desk</p>
             <NavLink className="brand-mark" to="/">
               {loaderData.publicEnv.appName}
             </NavLink>
+            <p className="brand-note">
+              Summary-first Hacker News triage for people who want the signal before the tab.
+            </p>
+          </div>
+          <div className="status-panel">
+            <span className="status-label">Session</span>
+            <strong className="status-value">{statusLabel}</strong>
           </div>
           <nav className="site-nav" aria-label="Primary">
             <NavLink className={({ isActive }) => `nav-link${isActive ? " active" : ""}`} to="/">
@@ -113,7 +120,6 @@ export default function App({ loaderData }: Route.ComponentProps) {
               </NavLink>
             )}
           </nav>
-          <div className="status-pill">{statusLabel}</div>
         </header>
         <Outlet />
       </div>
