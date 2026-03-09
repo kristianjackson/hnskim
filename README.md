@@ -4,7 +4,7 @@ HNSkim is a Cloudflare-hosted, Supabase-backed personal news reader that pulls s
 
 ## Current Goal
 
-Build a fast, trustworthy "read less, know enough" layer on top of Hacker News.
+Ship a fast, trustworthy "read less, know enough" layer on top of Hacker News.
 
 ## Stack
 
@@ -38,16 +38,17 @@ Build a fast, trustworthy "read less, know enough" layer on top of Hacker News.
 
 ## Commands
 
-These should exist as the project is built:
+Available now:
 
 ```bash
 npm run dev
 npm run typecheck
 npm run build
-npm run ingest:hn
-npm run summarize:stories
+npm run deploy:web
 npm run smoke:web
 ```
+
+Pipeline execution for local MVP testing currently lives in `/diagnostics` and the Worker cron, not standalone CLI scripts.
 
 ## Principles
 

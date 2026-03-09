@@ -1,0 +1,15 @@
+{
+  "name": "hnskim",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npm --prefix apps/web run build",
+    "cf-typegen": "npm --prefix apps/web run cf-typegen",
+    "deploy:web": "npm --prefix apps/web run deploy",
+    "dev": "npm --prefix apps/web run dev",
+    "smoke:web": "node scripts/smoke-web.mjs",
+    "typecheck": "npm --prefix apps/web run typecheck"
+  }
+}

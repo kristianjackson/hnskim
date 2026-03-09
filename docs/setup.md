@@ -30,16 +30,22 @@ SUPABASE_URL=
 SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 OPENAI_API_KEY=
-OPENAI_CHAT_MODEL=
+OPENAI_RESPONSE_MODEL=
 SESSION_SECRET=
 ```
 
 Suggested starting model:
-- `OPENAI_CHAT_MODEL=gpt-5-mini`
+- `OPENAI_RESPONSE_MODEL=gpt-5-mini`
 
 ## 4. Supabase Setup
 
 Create a Supabase project and apply the initial migration.
+
+Recommended local flow:
+
+```bash
+npx supabase@latest db push
+```
 
 Expected early tables:
 - `profiles`
@@ -64,7 +70,10 @@ Configure secrets in Cloudflare from the same values used in `.dev.vars`.
 Expected bindings at first:
 - environment variables only
 
-Add queues later if background processing needs to move off request-time execution.
+Background processing for the MVP uses:
+- a scheduled Worker cron
+- the `jobs` table plus `claim_jobs()`
+- the internal `/diagnostics` route for manual local runs
 
 ## 6. Hacker News Integration
 
@@ -108,7 +117,7 @@ Store:
 
 ## 9. Local Development
 
-Expected workflow:
+Primary workflow:
 
 ```bash
 npm run dev
@@ -116,17 +125,13 @@ npm run typecheck
 npm run build
 ```
 
-As jobs are added, expected commands should include:
-
-```bash
-npm run ingest:hn
-npm run fetch:articles
-npm run summarize:stories
-```
+To hydrate the feed locally after the app boots:
+- visit `/diagnostics`
+- run `Ingest top stories` or `Run full refresh`
 
 ## 10. Deployment
 
-Expected deploy flow:
+Deploy flow:
 
 ```bash
 npm run build
