@@ -1,5 +1,7 @@
 {
   "name": "hnskim",
+  "description": "Summary-first Hacker News reader that helps you skim before you click.",
+  "homepage": "https://hnskim-web.kristian-jackson.workers.dev",
   "private": true,
   "workspaces": [
     "apps/web"

@@ -1,5 +1,6 @@
 {
   "name": "hnskim-web",
+  "description": "Cloudflare Worker frontend for HNSkim, a summary-first Hacker News reader.",
   "private": true,
   "type": "module",
   "scripts": {
